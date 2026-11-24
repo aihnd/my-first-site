@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT | CAFE&BAR LIBERTE</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="img/logo-blk 1.svg" type="image/svg+xml">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sub-page.css">
+
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+
+    <!-- js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.inview.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- フォント -->
+    <!-- WDXL Lubrifont JP N -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">
+    <!-- Zen Maru Gothic-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <h1><a href="index.html"><img src="img/nav-logo.png" alt="" width="150px"></a></h1>
+
+        <!-- スマホ用ハンバーガーメニュー -->
+        <button class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- ナビゲーション -->
+        <nav>
+            <ul>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#concept">CONCEPT</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="event.html">EVENT</a></li>
+                <li><a href="#" class="select-page">CONTACT</a></li>
+                <li><a href="index.html#access">ACCESS</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!-- ヘッダーここまで -->
+
+    <main>
+        <section id="contact">
+
+            <div class="block-wrap js-bounceIn">
+                <h2>
+                    <h2>CONTACT</h2>
+                </h2>
+                <h3>イベント利用に関する<span>お問い合わせ</span></h3>
+                <p class="text-block">
+                    下記のフォームより<span>必要事項を入力し、送信ください。</span>
+                </p>
+                <p class="text-block small">※回答までお時間をいただく場合がございます。
+                    <br>お急ぎの方は、SNSからのご連絡をオススメします。
+                    <br>
+                    ※ご予約を確定するものではございません。
+                    <br>内容を確認後、当店より改めてご連絡いたします。
+                </p>
+
+                <!-- フォーム開閉ボタン -->
+                <button type="button" class="event-btns" aria-expanded="false" aria-controls="#contact .text-box">
+                    <p>Forms OPEN</p>
+                </button>
+
+                <div class="text-box">
+                    <h2 class="forms-title js-bounceIn">遊び場<span>レンタルフォーム</span></h2>
+                    <form action="#">
+                        <div>
+                            <h3>01.利用用途をお選びください。</h3>
+                            <p>
+                                <select name="kind" id="kind">
+                                    <option value="1">貸切パーティ</option>
+                                    <option value="2">ライブ</option>
+                                    <option value="3">ポップアップ</option>
+                                    <option value="4">作品展示</option>
+                                    <option value="5">その他</option>
+                                </select>
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>02.お客様情報</h3>
+                            <p>
+                                <label for="name">お客様氏名/団体名</label>
+                                <br><input type="text" id="name" name="name" repuired>
+                            </p>
+
+                            <p>
+                                <label for="tel">電話番号</label>
+                                <br><input type="text" id="tel" name="tel" repuired>
+                            </p>
+
+                            <p>
+                                <label for="mail">メールアドレス</label>
+                                <br><input type="text" id="mail" name="mail" repuired>
+                            </p>
+                        </div>
+                        <div>
+                            <h3>03.お問い合わせ内容</h3>
+                            <p>
+                                <label for="message">
+                                    <br><textarea name="message" id="message"
+                                        placeholder="ご希望の日時・イベント内容・想定利用人数などを具体的に記載してください。" repuired></textarea>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="submit event-btns-wrap">
+                            <input type="submit" value="送信" class="event-btns">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="block-wrap bottom js-bounceIn">
+                <h3>その他のお問い合わせ</h3>
+                <p class="text-block">公式Instagramまたはオーナー叶真宛に、<span>DMにてご連絡ください。</span>
+                </p>
+
+                <div class="contact-icons">
+                    <a href="https://www.instagram.com/cafebarliberte/" target="_blank" class="contact-icon">
+                        <img src="img/contact_sns-icon_liberte.png" alt="">
+                        <p>@cafebarliberte</p>
+                    </a>
+                    <a href="https://www.instagram.com/tohma31536000/" target="_blank" class="contact-icon">
+                        <img src="img/contact_sns-icon_tohma.png" alt="">
+                        <p>@tohma31536000</p>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- 背景 -->
+            <div class="wood-bg"></div>
+            <div class="spotlight-area"></div>
+
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="contact-footer">
+        <p>&copy;2026 CAFE&BAR LIBERTE</p>
+        <div class="sns-icon">
+            <a href="https://www.instagram.com/cafebarliberte/" target="_blank"><img src="img/insta-icon.svg"
+                    alt="Instagram" width="30">
+
+            </a>
+            <a href="https://x.com/cafebarliberte" target="_blank"><img src="img/X-icon.svg" alt="X" width="30">
+            </a>
+        </div>
+    </footer>
+    <!-- フッターここまで -->
+</body>
+
+</html>

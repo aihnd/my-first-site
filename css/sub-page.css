@@ -1,0 +1,837 @@
+/* 共通背景 */
+.wood-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+
+    background-image: url(../img/wood-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* スポットライト風背景 */
+.spotlight-area {
+    color: #fff;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.spotlight-area::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+    background: linear-gradient(90deg,
+            rgba(27, 2, 2, 0.507) 0%,
+            rgba(0, 0, 0, 0.29) 20%,
+            rgba(246, 246, 215, 0.169) 50%,
+            rgba(0, 0, 0, 0.29) 80%,
+            rgba(27, 2, 2, 0.507) 100%);
+}
+
+/* -----------------------------
+         EVENT PAFE
+----------------------------- */
+#event {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+/* 外側デコレーション */
+/* ギター */
+.bg-items {
+    position: relative;
+}
+
+.bg-items::before {
+    position: absolute;
+    top: -100px;
+    left: -60px;
+    z-index: 2;
+
+    display: block;
+    content: '';
+    width: clamp(310px, 28vw, 400px);
+    aspect-ratio: 400 / 1088;
+
+    background-image: url(../img/event-deco01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    /* transform: translateX(-50px); */
+}
+
+/* #event::before.active {
+    transform: translateX(0);
+
+} */
+
+/* チラシ */
+.bg-items::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    display: block;
+    content: '';
+    width: clamp(120px, 25vw, 321px);
+    aspect-ratio: 321 / 1245;
+
+    background-image: url(../img/event-deco02.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+/* -------------------------- */
+
+#event .text-box {
+    max-width: 700px;
+    margin: 8% auto;
+    padding-block: 2%;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#event .text-block {
+    padding-top: 20px;
+}
+
+#event .text-box.active {
+    opacity: 1;
+    animation: bounceIn 1s ease forwards;
+
+}
+
+#contact .text-block {
+    padding-top: 0;
+    align-items: center;
+    gap: 0;
+}
+
+#contact .text-block.small {
+    font-size: clamp(0.9rem, 0.8571rem + 0.3274vw, 1.1rem);
+    padding-block: 20px;
+}
+
+/* -----------------------  */
+
+/* タイトル部分 */
+#event .title-block {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    max-width: 100%;
+    max-height: 23%;
+
+    background-image: url(../img/event-bg.jpg);
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #f3f775, #f0ecd6, #f3f775) 1;
+}
+
+#event .scroll-down {
+    opacity: 0;
+}
+
+#event .scroll-down.active {
+    opacity: 1;
+
+}
+
+
+
+/* ---------------------- */
+/* メインチラシ */
+.main-block {
+    max-width: 900px;
+    height: fit-content;
+    margin: 1000px auto 0;
+
+    border: 10px solid #edecec;
+    background-image: url(../img/event-paper-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    box-shadow: 10px 15px 0.7px 0 #00000088;
+}
+
+/* Inview-enterアニメーション用 */
+.js-inview-enter {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.js-inview-enter.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ------------ */
+/* EVENT INFO */
+.main-block .title {
+    height: fit-content;
+    overflow: hidden;
+
+}
+
+.main-block .title h3 {
+    height: 100%;
+    margin-block: 9%;
+    padding-inline: 4%;
+    text-align: center;
+
+    color: #fff;
+    font-size: clamp(3.5rem, 2.4853rem + 2.0956vw, 6rem);
+    letter-spacing: 0;
+
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    rotate: -10deg;
+
+    background-color: var(--main-color);
+}
+
+/* WHAT'S NEXT/ARCHIVE */
+.main-block h4 {
+    color: #fff;
+    padding-bottom: 0;
+}
+
+/* ネクスト */
+.next-block {
+    position: relative;
+    margin: 6%;
+
+    background-color: #7c1a1a54;
+}
+
+.next-block h4 {
+    text-align: start;
+    width: 50%;
+    padding-left: 4%;
+
+    background-color: var(--main-color);
+}
+
+.next-block p {
+    padding: 4% 4% 4% 7%;
+
+    font-size: clamp(2rem, 1.4853rem + 2.0956vw, 4rem);
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    letter-spacing: 5%;
+    line-height: 90%;
+
+}
+
+.next-block .date {
+    font-size: 1.3em;
+    line-height: 110%;
+
+}
+
+.next-block time {
+    font-size: 0.8em;
+}
+
+.next-block img {
+    position: absolute;
+    top: -15%;
+    right: 0;
+    width: 50%;
+
+    border: 2px solid;
+    border-image: linear-gradient(to right, #f3f775, #f0ecd6, #f3f775) 1;
+}
+
+/* ------------ */
+/* アーカイブ */
+.archive-block {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.archive-block h4 {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.archive-ph {
+    padding-top: 30px;
+    margin-inline: 4%;
+}
+
+.archive-ph img {
+    max-width: 80%;
+    aspect-ratio: 413 / 288;
+    object-fit: cover;
+
+    opacity: 1;
+    transition: opacity 0.5s ease;
+
+}
+
+/* moreボタン */
+.archive-block .event-btns {
+    margin: 0 auto;
+
+}
+
+/*  ボタンアニメーション用 */
+.event-btns {
+    position: relative;
+    display: block;
+    width: fit-content;
+    padding: 10px 5% 10px 8%;
+
+    border: 1px solid #fff;
+    transition: transform 0.2s cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+.event-btns::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MORE矢印*/
+.event-btns p {
+    position: relative;
+
+}
+
+.event-btns p::before {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    bottom: 0;
+    display: block;
+    content: '';
+
+    width: 80%;
+    height: 80%;
+
+    background-image: url(../img/arrow-right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* ----------------- */
+
+/* 今月のスケジュール */
+.schedule {
+    position: relative;
+    display: block;
+
+    max-width: 500px;
+
+    margin: 100px auto 150px;
+    padding: 20px;
+    rotate: 2deg;
+
+    border: 5px solid #edecec;
+    background-color: var(--base-color);
+    box-shadow: 10px 15px 0.7px 0 #00000088;
+    transition: rotate 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.schedule h3 {
+    width: fit-content;
+    margin: 2% auto;
+    padding-inline: 10px;
+
+    border: 2px solid #fff;
+    border-radius: 100px;
+    border-image: linear-gradient(to right, #f3f775, #f0ecd6, #f3f775) 1;
+}
+
+.calendar {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 3;
+
+    height: fit-content;
+
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+/* ホバー時：虫眼鏡 */
+.schedule::before {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1;
+
+    display: block;
+    content: '';
+    width: 51px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url(../img/schedule_icon.svg);
+    opacity: 0;
+    transition: 0.2s ease;
+}
+
+/* レンタルフォームチケット */
+.rental-ticket {
+    max-width: 600px;
+
+    margin: 10% auto 20px;
+    padding-top: 20px;
+
+    text-align: center;
+
+    border: 2px solid #edecec;
+    background-image: url(../img/rental-ticket-bg.png);
+    background-size: cover;
+
+    transition: 0.8s ease;
+}
+
+.ticket-top p {
+    padding: 0 10px 10px;
+    font-size: clamp(0.875rem, 0.7141rem + 0.6549vw, 1.5rem);
+    text-shadow: 0 0 5px var(--sub-color);
+}
+
+.play-ground {
+    font-size: clamp(1.5rem, 1.057rem + 0.7859vw, 2rem);
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+
+    background-color: #583be876;
+    border-top: dotted 3px #fff;
+
+}
+
+.rental-ticket .event-btns {
+    padding: 10px 10% 10px 15%;
+}
+
+.ticket-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding-block: 2%;
+    background-color: #583be876;
+}
+
+.ticket-bottom p {
+    line-height: 100%;
+}
+
+/* フッター */
+footer.event-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    z-index: 3;
+
+    height: fit-content;
+}
+
+footer.contact-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+/* ------------------------
+CONTACT PAGE
+------------------------ */
+
+#contact {
+    position: relative;
+}
+
+#contact .block-wrap {
+    max-width: 1000px;
+    height: max-content;
+    margin: 0 auto;
+    padding: 50px 4%;
+
+    background-color: #11000060;
+}
+
+#contact .block-wrap.bottom {
+    padding-bottom: 10%;
+
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, #f3f775, #f0ecd6, #f3f775) 1;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.contact-icon {
+    position: relative;
+    margin-top: 10px;
+
+    opacity: 0;
+    transform: translateY(-50px);
+
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.contact-icon::before {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    bottom: 0;
+    display: block;
+    content: '';
+    rotate: 90deg;
+
+    width: 15px;
+    height: 25px;
+    opacity: 0;
+    background-image: url(../img/arrow-right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.contact-icon img {
+    width: 100px;
+    margin: 40px auto 0;
+}
+
+.contact-icon.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-icon p {
+    margin-top: 5px;
+    opacity: 0;
+    color: #ffffff84;
+}
+
+
+
+/* OPENボタン */
+button.event-btns {
+    margin: 0 auto;
+    color: #fff;
+    cursor: pointer;
+
+    background: none;
+    font: inherit;
+}
+
+button.event-btns p::before {
+    top: 150%;
+    left: -60%;
+
+    rotate: 90deg;
+}
+
+
+/* OPEN時 */
+button.event-btns.is-open p::before {
+    top: -60%;
+    left: -80%;
+    rotate: -90deg;
+}
+
+/* --------------------------- */
+/* フォーム内：波紋ボタン */
+.event-btns-wrap {
+    position: relative;
+    max-width: 200px;
+    margin: 50px auto;
+}
+
+/* 波紋の外枠 */
+.event-btns-wrap::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    border: 1px solid #fff;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* input本体 */
+input.event-btns {
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    appearance: none;
+}
+
+/* レンタルフォームの中身 */
+#contact .text-box {
+    margin: 20px auto 0;
+    max-width: 800px;
+    overflow-y: hidden;
+    display: none;
+}
+
+#contact form h3 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 0 10px;
+    font-size: clamp(1.2rem, 1.057rem + 0.7859vw, 2.0rem);
+    text-align: start;
+}
+
+.forms-title {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+#contact form p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#kind {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+
+    padding: 10px 10px;
+
+    border: 1px solid #b93c3c;
+    color: #fff;
+    background-color: #110000;
+    font-size: clamp(0.9375rem, 0.8892rem + 0.1965vw, 1.125rem);
+}
+
+#name,
+#tel,
+#mail,
+#contact textarea {
+    width: 100%;
+    padding: 10px 5px;
+    border: 1px solid #b93c3c;
+    color: #fff;
+    background-color: #110000;
+    font-size: clamp(0.9375rem, 0.8892rem + 0.1965vw, 1.125rem);
+}
+
+#contact textarea {
+    height: 400px;
+}
+
+/* --------
+ホバー
+-------- */
+@media (hover: hover) and (pointer: fine) {
+
+    /* リンクボタン　波形のアニメーションホバー */
+    .rental-ticket:hover .event-btns::before,
+    .archive-block:hover .event-btns::before,
+    button.event-btns:hover::before,
+    .event-btns-wrap:hover::before {
+        animation: squareRipple 1s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    @keyframes squareRipple {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+
+        100% {
+            transform: scale(1.25, 1.5);
+            opacity: 0;
+        }
+    }
+
+    .archive-block:hover img {
+        opacity: 0.5;
+        transition: opacity 0.5s ease;
+    }
+
+    .rental-ticket:hover {
+        background-image: url(../img/rental-ticket-bg_light.jpg);
+        background-size: cover;
+
+        transition: 0.8s ease;
+    }
+
+    .schedule:hover {
+        rotate: 0deg;
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
+
+    .schedule:hover.schedule::before {
+        opacity: 1;
+        transition: 0.2s ease;
+    }
+
+    .contact-icon:hover p,
+    .contact-icon:hover::before {
+        opacity: 1;
+        transition: 0.5s ease;
+    }
+
+    .contact-icon:hover img {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+
+    }
+}
+
+/* -------------PCここまで-------------- */
+
+/* -------------
+SP用
+-------------- */
+@media screen and (max-width:1000px) {
+    .main-block {
+        margin-inline: 4%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    /* -------------イベントページ-------------*/
+    .bg-items::before {
+        rotate: 90deg;
+        top: -140px;
+        left: -80px;
+
+        aspect-ratio: 425 / 750;
+    }
+
+    .main-block {
+        margin-top: 900px;
+        margin-inline: 4%;
+    }
+
+    .main-block h4 {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .main-block p {
+        padding: 0 0 20px 0;
+    }
+
+    .next-block img {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        margin-inline: auto;
+    }
+
+    .archive-block .event-btns {
+        max-height: 50px;
+    }
+
+    .archive-block .event-btns p::before {
+        max-height: 25px;
+        aspect-ratio: 1 / 2;
+    }
+
+    .archive-ph img {
+        max-width: 95%;
+    }
+
+    .schedule {
+        max-width: 80%;
+        margin-block: 40%;
+    }
+
+    .rental-ticket {
+        max-width: 80%;
+        transform: scale(0.9);
+    }
+
+    /* -------------コンタクトページ-------------*/
+
+    #contact .text-box {
+        margin-inline: 4%;
+        max-width: 768px;
+    }
+
+    /* その他のお問い合わせ */
+    #contact .block-wrap.bottom {
+        padding-bottom: 40%;
+    }
+
+    #contact .text-block,
+    .small {
+        letter-spacing: 0;
+    }
+
+    .contact-icon::before {
+        animation: fadeInOut 1s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .contact-icon p {
+        opacity: 1;
+    }
+
+}
+
+
+@media screen and (max-width:612px) {
+    .bg-items::before {
+        rotate: 90deg;
+        top: -100px;
+        left: -90px;
+        width: 300px;
+        aspect-ratio: 200 / 300;
+    }
+}
